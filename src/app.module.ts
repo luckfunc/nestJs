@@ -6,9 +6,10 @@ import { DemoController } from './demo/demo.controller';
 import { DemoModule } from './demo/demo.module';
 import { UserModule } from './user/user.module';
 import { CatsModule } from './cats/cats.module';
+import { ManagerModule } from './manager/manager.module';
 
 @Module({
-  imports: [TestModule, DemoModule, UserModule, CatsModule],
+  imports: [TestModule, DemoModule, UserModule, CatsModule, ManagerModule],
   controllers: [AppController, DemoController],
   providers: [AppService],
 })
