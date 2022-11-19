@@ -3,7 +3,10 @@ import { ManagerService } from './manager.service';
 import { CreateManagerDto } from './dto/create-manager.dto';
 import { UpdateManagerDto } from './dto/update-manager.dto';
 
-@Controller('manager')
+@Controller({
+  path: 'manager',
+  version: '1'
+})
 export class ManagerController {
   constructor(private readonly managerService: ManagerService) {}
 
@@ -13,7 +16,7 @@ export class ManagerController {
   }
 
   @Get()
-  @Version('1')
+  @Version('2')
   findAll() {
     return this.managerService.findAll();
   }
