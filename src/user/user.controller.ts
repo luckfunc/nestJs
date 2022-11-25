@@ -1,37 +1,57 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Request, Post, Body, Patch, Param, Delete, Headers, HttpCode, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
-@Controller({
-  path: 'user',
-  version: '1'
-})
+@Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.userService.create(createUserDto);
-  }
+ /*  @Get()
+  findAll(@Request() req) {
+    console.log('req', req.query);
 
+    return {
+      code: 200
+    }
+  } */
   @Get()
-  findAll() {
-    return this.userService.findAll();
+  findAll(@Query() query){
+    console.log('query', query);
+    return {
+      data: [
+        { name: 'xdd', age: 22 },
+        { name: 'xdd', age: 21 },
+        { name: 'xdd', age: 20 },
+        { name: 'xdd', age: 19 },
+        { name: 'xdd', age: 18 },
+      ]
+    }
   }
 
+  //post请求
+ /*  @Post()
+  findOne(@Request() req) {
+    console.log('req', req.body);
+    return {
+      code: 200
+    }
+  } */
+   @Post()
+  findOne(@Body('name') body) {
+    console.log('body', body);
+    return {
+      code: 200
+    }
+  }
+  //动态参数
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
-  }
+  @HttpCode(500)
+    findId(@Param('id') id, @Headers('cookie') headers) {
+      console.log(id, 'headers', headers);
+      return {
+        msg: '服务器错误'
+      }
+    }
+  
 }
