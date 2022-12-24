@@ -10,6 +10,7 @@ interface Options {
 })
 
 export class ConfigModule {
+  //动态模块 可以增加参数 
   static forRoot(options: Options): DynamicModule {
     return {
       module: ConfigModule,
