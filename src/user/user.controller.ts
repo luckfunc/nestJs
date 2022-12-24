@@ -6,10 +6,23 @@ import { UserService } from './user.service';
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) { }
-  @Get()
-  getInfo(@HostParam() host) {
-    console.log('host', host)
+  @Post()
+  findUser(@Body() params) {
+    //Params是 get穿过来的ID :id  @Body是post请求穿过来的参数
+    console.log('params', params);
+    if(params.username === 'admin' && params.password === '123456') {
+      return {
+        code: 200,
+        msg: 'Login Success!'
+      }
+    }else {
+      return {
+        err: 'Login Failed!'
+      } 
+    }
+    
   }
+  
 
   /*  @Get()
    findAll(@Request() req) {

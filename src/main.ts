@@ -5,6 +5,7 @@ import * as session from 'express-session';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.enableCors(); //支持跨域
   app.enableVersioning({
     type: VersioningType.URI
   })
