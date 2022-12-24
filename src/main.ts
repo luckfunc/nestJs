@@ -9,7 +9,7 @@ async function bootstrap() {
   app.enableVersioning({
     type: VersioningType.URI
   })
-  app.use(session({
+  /* app.use(session({
     secret: 'xdd',//加严
     rolling: true,//每次设置cookie重置默认时间
     name: 'xdd.sid',
@@ -17,7 +17,7 @@ async function bootstrap() {
       //httpOnly 是否能够修改
       maxAge: 30000000,// 过期时间 null
     }
-  }))
+  })) */
   await app.listen(3001);
 }
 bootstrap();

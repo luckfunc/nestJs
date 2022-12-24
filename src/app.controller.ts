@@ -9,7 +9,7 @@ export class AppController {
   @Inject('CCC') private readonly number: number
   ) {}
   @Get()
-  getHello(): number {
+  getHello(): any {
     return this.number;
   }
 }

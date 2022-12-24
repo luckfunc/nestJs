@@ -10,19 +10,28 @@ export class UserController {
   findUser(@Body() params) {
     //Params是 get穿过来的ID :id  @Body是post请求穿过来的参数
     console.log('params', params);
-    if(params.username === 'admin' && params.password === '123456') {
+    if (params.username === 'admin' && params.password === '123456') {
       return {
         code: 200,
         msg: 'Login Success!'
       }
-    }else {
+    } else {
       return {
-        err: 'Login Failed!'
-      } 
+        code: 200,
+        data: [
+          {
+            name: 'xdd'
+          },
+          {
+            name: 'Roll'
+          }
+        ],
+        err: 'Incorrect username or password.'
+      }
     }
-    
+
   }
-  
+
 
   /*  @Get()
    findAll(@Request() req) {
@@ -41,18 +50,18 @@ export class UserController {
   getBlog(@Query() query) {
     console.log('query', query);
     if (query && query['123'] === '123') {
-      return { url: 'https:gogogo7.com/tags'}
-      
+      return { url: 'https:gogogo7.com/tags' }
+
     }
   }
   @Get(':id')
   findCat(@Param('id') id) {
     console.log('id', id);
-    if(id === '123') {
+    if (id === '123') {
       return {
         code: 200
       }
-    }else {
+    } else {
       return {
         code: 500,
         message: '服务器出错了'
@@ -66,7 +75,7 @@ export class UserController {
       code: 302
     }
   }
-  
+
   // @HttpCode(204) //指定HTTP状态码
   /* findAll(@Query() query) {
     console.log('query', query);
