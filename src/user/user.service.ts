@@ -9,7 +9,7 @@ export class UserService {
   }
 
   findAll() {
-    return `User Module's Sevice`;
+    return `User Module Service`;
   }
 
   findOne(id: number) {

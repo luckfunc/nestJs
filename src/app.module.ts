@@ -1,13 +1,14 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
 import { ListModule } from './list/list.module';
-import { ConfigModule } from './config/config.module';
+import { UserModule } from './user/user.module';
+import { ConfigModule } from './config/config.module'
+import { MenuModule } from './menu/menu.module';
 @Module({
-  imports: [UserModule, ListModule, ConfigModule.forRoot({
+  imports: [ListModule, UserModule, ConfigModule.forRoot({
     path: '/xiaoxue'
-  })],
+  }), MenuModule],
   controllers: [AppController],
   providers: [AppService],
 })

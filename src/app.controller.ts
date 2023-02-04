@@ -4,6 +4,7 @@ import { UserService } from './user/user.service';
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService,
+    //在controller里面使用UserService模块
     private readonly UserService: UserService
     ) {}
 

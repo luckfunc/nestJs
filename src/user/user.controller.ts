@@ -1,13 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Inject } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly userService: UserService,
-    @Inject('config') private readonly Moudle: any
-    ) {}
+  constructor(private readonly userService: UserService) {}
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
@@ -16,7 +14,7 @@ export class UserController {
 
   @Get()
   findAll() {
-    return this.Moudle;
+    return this.userService.findAll();
   }
 
   @Get(':id')
