@@ -38,7 +38,7 @@ export class MenuService {
                 "id": 22,
                 "name": "Create Game",
                 "icon": "",
-                "route": "#/developers/game/create",
+                "route": "#/download",
                 "sort": 0,
                 "children": null
             }
