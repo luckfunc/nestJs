@@ -11,163 +11,74 @@ export class MenuService {
   findAll() {
     return {
       data: [
-    {
-        "id": 1,
-        "name": "Dashboard",
-        "icon": "HomeOutlined",
-        "route": "#/dashboard",
-        "sort": 4,
-        "children": null
-    },
-    {
-        "id": 2,
-        "name": "Developers",
-        "icon": "ExperimentOutlined",
-        "route": "#/developers",
-        "sort": 3,
-        "children": [
+        {
+          "id": 1,
+          "name": "Dashboard",
+          "icon": "HomeOutlined",
+          "route": "#/home/dashboard",
+          "sort": 4,
+          "children": null
+        },
+        {
+          "id": 2,
+          "name": "Demo2",
+          "icon": "ExperimentOutlined",
+          "route": "#/home/demo1",
+          "sort": 3,
+          "children": [
             {
-                "id": 21,
-                "name": "Game List",
-                "icon": "",
-                "route": "#/developers/game",
-                "sort": 0,
-                "children": null
+              "id": 21,
+              "name": "Children 2-1",
+              "icon": "",
+              "route": "#/home/demo1/child1",
+              "sort": 0,
+              "children": null
+            },
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Demo2",
+          "icon": "CrownOutlined",
+          "route": "#/home/demo2",
+          "sort": 1,
+          "children": [
+            {
+              "id": 31,
+              "name": "Children 3-1",
+              "icon": "",
+              "route": "#/home/demo2/child1",
+              "sort": 0,
+              "children": null
             },
             {
-                "id": 22,
-                "name": "Create Game",
-                "icon": "",
-                "route": "#/download",
-                "sort": 0,
-                "children": null
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Managers",
-        "icon": "CrownOutlined",
-        "route": "#/managers",
-        "sort": 1,
-        "children": [
-            {
-                "id": 42,
-                "name": "Category",
-                "icon": "",
-                "route": "#/managers/category",
-                "sort": 0,
-                "children": null
+              "id": 32,
+              "name": "Children 3-2",
+              "icon": "",
+              "route": "#/home/demo2/child2",
+              "sort": 0,
+              "children": null
             },
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Demo3",
+          "icon": "GlobalOutlined",
+          "route": "#/home/demo3",
+          "sort": 0,
+          "children": [
             {
-                "id": 45,
-                "name": "Home Display",
-                "icon": "",
-                "route": "#/managers/homeDisplay",
-                "sort": 0,
-                "children": null
+              "id": 41,
+              "name": "Children 4-1",
+              "icon": "",
+              "route": "#/home/demo3/child1",
+              "sort": 1,
+              "children": null
             },
-            {
-                "id": 41,
-                "name": "Games",
-                "icon": "",
-                "route": "#/managers/game",
-                "sort": 0,
-                "children": null
-            },
-            {
-                "id": 43,
-                "name": "Comment",
-                "icon": "",
-                "route": "#/managers/comment",
-                "sort": 0,
-                "children": null
-            },
-            {
-                "id": 44,
-                "name": "Ab test",
-                "icon": "",
-                "route": "#/managers/abtest",
-                "sort": 0,
-                "children": null
-            },
-            {
-                "id": 46,
-                "name": "Game Import",
-                "icon": "",
-                "route": "#/managers/gameimport",
-                "sort": 0,
-                "children": null
-            },
-            {
-                "id": 47,
-                "name": "Groups",
-                "icon": "",
-                "route": "#/managers/groups",
-                "sort": 0,
-                "children": null
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Site",
-        "icon": "GlobalOutlined",
-        "route": "#/websiteManager",
-        "sort": 0,
-        "children": [
-            {
-                "id": 51,
-                "name": "Site",
-                "icon": "",
-                "route": "#/websiteManager/websiteList",
-                "sort": 1,
-                "children": null
-            },
-            {
-                "id": 53,
-                "name": "Game Collection",
-                "icon": "",
-                "route": "#/websiteManager/gameCollection",
-                "sort": 2,
-                "children": null
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "name": "Language",
-        "icon": "CrownOutlined",
-        "route": "#/language",
-        "sort": 0,
-        "children": [
-            {
-                "id": 61,
-                "name": "Language",
-                "icon": "",
-                "route": "#/managers/language",
-                "sort": 0,
-                "children": null
-            },
-            {
-                "id": 62,
-                "name": "About Me",
-                "icon": "",
-                "route": "#/managers/homepage",
-                "sort": 0,
-                "children": null
-            },
-            {
-                "id": 63,
-                "name": "Contact Me",
-                "icon": "",
-                "route": "#/managers/contactme",
-                "sort": 0,
-                "children": null
-            }
-        ]
-    }
-]
+          ]
+        },
+      ]
     }
   }
 
