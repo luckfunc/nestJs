@@ -1,7 +1,7 @@
 import { Injectable, NestInterceptor, CallHandler } from "@nestjs/common";
 import { map } from 'rxjs/operators';
 import { Observable } from "rxjs";
-
+//响应拦截器
 interface Data<T> {
   data: T
 }
@@ -18,5 +18,4 @@ export class Response<T> implements NestInterceptor {
       }
     }));
   }
-
 }
