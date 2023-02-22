@@ -4,7 +4,10 @@ import { CreateGuardDto } from './dto/create-guard.dto';
 import { UpdateGuardDto } from './dto/update-guard.dto';
 import { RoleGuard } from './role/role.guard';
 import { Role, ReqUrl } from 'src/role/role.decorator';
+import { ApiBearerAuth, ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 @Controller('guard')
+@ApiBearerAuth()
+@ApiTags("守卫接口")
 @UseGuards(RoleGuard)//装饰器的用法
 export class GuardController {
   constructor(private readonly guardService: GuardService) {}
@@ -16,6 +19,8 @@ export class GuardController {
 
   @Get()
   @Role("admin")
+  @ApiOperation({ summary: "Get接口", description: "描述xxx"}) //接口描述  
+  @ApiQuery({ name: "page", description: "分页信息" })
   // @SetMetadata("role", ["admin"])
   findAll(@ReqUrl("123") url: string) {
     console.log("url==", url);
@@ -23,6 +28,7 @@ export class GuardController {
   }
 
   @Get(':id')
+  @ApiParam({ name: "id", description: "这是一个id", required: true })
   findOne(@Param('id') id: string) {
     return this.guardService.findOne(+id);
   }
