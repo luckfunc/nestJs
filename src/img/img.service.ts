@@ -13,7 +13,7 @@ export class ImgService {
     const nextText = '下一页';
     let index = 0;
     const getImg = async () => {
-      let url = `https://www.xgmn01.com/XiaoYu/XiaoYu24588${index? '_'+ index : ''}.html`;
+      let url = `https://www.xgmn01.com/Xiuren/Xiuren24718${index? '_'+ index : ''}.html`;
       const body = await axios.get(url).then(res => res.data);
       const $ = cheerio.load(body);
       const page = $(`.pagination`).eq(0).find('a');
