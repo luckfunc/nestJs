@@ -2,7 +2,8 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, SetMetada
 import { GuardService } from './guard.service';
 import { CreateGuardDto } from './dto/create-guard.dto';
 import { UpdateGuardDto } from './dto/update-guard.dto';
-import { RoleGuard } from './role/role.guard'
+import { RoleGuard } from './role/role.guard';
+import { Role, ReqUrl } from 'src/role/role.decorator';
 @Controller('guard')
 @UseGuards(RoleGuard)//装饰器的用法
 export class GuardController {
@@ -14,8 +15,10 @@ export class GuardController {
   }
 
   @Get()
-  @SetMetadata("role", ["admin"])
-  findAll() {
+  @Role("admin")
+  // @SetMetadata("role", ["admin"])
+  findAll(@ReqUrl("123") url: string) {
+    console.log("url==", url);
     return this.guardService.findAll();
   }
 
