@@ -19,7 +19,7 @@ export class GuardController {
 
   @Get()
   @Role("admin")
-  @ApiOperation({ summary: "Get接口", description: "描述xxx"}) //接口描述  
+  @ApiOperation({ summary: "Get接口", description: "描述xxx" }) //接口描述  
   @ApiQuery({ name: "page", description: "分页信息" })
   // @SetMetadata("role", ["admin"])
   findAll(@ReqUrl("123") url: string) {
