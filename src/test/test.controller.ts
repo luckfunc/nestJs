@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { TestService } from './test.service';
 import { CreateTestDto } from './dto/create-test.dto';
 import { UpdateTestDto } from './dto/update-test.dto';
+import { query } from 'express';
 
 @Controller('test')
 export class TestController {
@@ -11,10 +12,14 @@ export class TestController {
   create(@Body() createTestDto: CreateTestDto) {
     return this.testService.create(createTestDto);
   }
+  @Post("/add/tags")
+  addTags(@Body() params: {tags: string[], useId: number}) {
+    return this.testService.addTags(params);
+  }
 
   @Get()
-  findAll() {
-    return this.testService.findAll();
+  findAll(@Query() query: { keyword: string, page: number, pageSize: number }) {
+    return this.testService.findAll(query);
   }
 
   @Get(':id')
@@ -27,8 +32,9 @@ export class TestController {
     return this.testService.update(+id, updateTestDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
+  @Delete()
+  remove(@Param("id") id: number) {
+    console.log(id);
     return this.testService.remove(+id);
   }
 }

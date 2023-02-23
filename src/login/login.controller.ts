@@ -19,6 +19,7 @@ export class LoginController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
+    console.log("loginID=>", id);
     return this.loginService.findOne(+id);
   }
 
