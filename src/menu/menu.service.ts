@@ -13,7 +13,7 @@ export class MenuService {
       data: [
         {
           "id": 1,
-          "name": "Dashboard",
+          "name": "仪表盘",
           "icon": "HomeOutlined",
           "route": "#/home/dashboard",
           "sort": 4,
@@ -21,63 +21,25 @@ export class MenuService {
         },
         {
           "id": 2,
-          "name": "Demo2",
+          "name": "学生",
           "icon": "ExperimentOutlined",
-          "route": "#/home/demo1",
+          "route": "#/home/person",
           "sort": 3,
-          "children": [
-            {
-              "id": 21,
-              "name": "Children 2-1",
-              "icon": "",
-              "route": "#/home/demo1/child1",
-              "sort": 0,
-              "children": null
-            },
-          ]
         },
         {
           "id": 3,
-          "name": "Demo2",
+          "name": "座位",
           "icon": "CrownOutlined",
-          "route": "#/home/demo2",
+          "route": "#/home/seat",
           "sort": 1,
-          "children": [
-            {
-              "id": 31,
-              "name": "Children 3-1",
-              "icon": "",
-              "route": "#/home/demo2/child1",
-              "sort": 0,
-              "children": null
-            },
-            {
-              "id": 32,
-              "name": "Children 3-2",
-              "icon": "",
-              "route": "#/home/demo2/child2",
-              "sort": 0,
-              "children": null
-            },
-          ]
         },
         {
           "id": 4,
-          "name": "Demo3",
+          "name": "公告",
           "icon": "GlobalOutlined",
-          "route": "#/home/demo3",
+          "route": "#/home/announcement",
           "sort": 0,
-          "children": [
-            {
-              "id": 41,
-              "name": "Children 4-1",
-              "icon": "",
-              "route": "#/home/demo3/child1",
-              "sort": 1,
-              "children": null
-            },
-          ]
-        },
+        }
       ]
     }
   }

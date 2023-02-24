@@ -8,8 +8,32 @@ export class UserService {
     return 'This action adds a new user';
   }
 
-  findAll() {
-    return `User Module Service`;
+  findAll(): any {
+    return {
+      "data": [
+        {
+          student_id: 1,
+          student_name: "小薛1",
+          create_time: "创建时间1"
+        },
+        {
+          student_id: 2,
+          student_name: "小薛2",
+          create_time: "创建时间1"
+        },
+        {
+          student_id: 3,
+          student_name: "小薛3",
+          create_time: "创建时间1"
+        },
+        {
+          student_id: 4,
+          student_name: "小薛4",
+          create_time: "创建时间1"
+        }
+      ],
+      total: 4
+    }
   }
 
   findOne(id: number) {
